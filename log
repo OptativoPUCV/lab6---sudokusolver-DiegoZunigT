@@ -16,3 +16,17 @@ sudoku.c:56:24: note: within this loop
 cc1: all warnings being treated as errors
 Compilation failed
 0b80df6
+Wed 15 May 2024 12:42:40 AM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+test.c: In function ‘get_adj_nodes’:
+sudoku.c:57:23: error: iteration 9 invokes undefined behavior [-Werror=aggressive-loop-optimizations]
+   57 |          if(n->sudo[i][j] == 0) {
+      |             ~~~~~~~~~~^~~
+sudoku.c:56:24: note: within this loop
+   56 |       for(int j = 0; j <= 9; j++) {
+      |                      ~~^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+18e7c94
