@@ -248,3 +248,13 @@ list.h:33:6: note: declared here
       |      ^~~~
 Compilation failed
 e993ef3
+Thu 16 May 2024 11:01:37 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:129:18: error: invalid use of void expression
+  129 |          push(s, popFront(adjNodes));
+      |                  ^~~~~~~~~~~~~~~~~~
+Compilation failed
+b515540
