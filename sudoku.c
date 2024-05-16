@@ -68,7 +68,7 @@ int is_valid(Node* n)
       }
       for(int i = (auxi / 3) * 3; i < ((auxi / 3) * 3) + 3; i++) {
          for(int j = (auxj / 3) * 3; j < ((auxj / 3) * 3) + 3; j++) {
-            if((i != auxi || j != auxj) && n->sudo[i][j] == n->sudo[auxi][auxj]) {j);
+            if((i != auxi || j != auxj) && n->sudo[i][j] == n->sudo[auxi][auxj]) {
                return 0;
             }
          }
