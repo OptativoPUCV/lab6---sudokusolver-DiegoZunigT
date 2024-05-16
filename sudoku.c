@@ -126,7 +126,9 @@ Node* DFS(Node* initial, int* cont)
       }
       List *adjNodes = get_adj_nodes(n);
       while(!is_empty(adjNodes)) {
-         push(s, popFront(adjNodes));
+         Node *aux = front(adjNodes);
+         popFront(adjNodes);
+         push(s, aux);
       }
    }
    return NULL;
