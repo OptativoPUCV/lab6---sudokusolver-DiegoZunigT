@@ -124,7 +124,10 @@ Node* DFS(Node* initial, int* cont)
       if(is_final(n)) {
          return n;
       }
-      
+      List *adjNodes = get_adj_nodes(n);
+      while(!is_empty(adjNodes)) {
+         push(popFront(adjNodes));
+      }
    }
    return NULL;
 }
