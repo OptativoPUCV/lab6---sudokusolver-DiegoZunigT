@@ -98,6 +98,7 @@ List* get_adj_nodes(Node* n)
                pushBack(list, node);
             }
          }
+         return list;
       }
       j++;
       if(!(j % 9)) {
