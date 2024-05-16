@@ -49,7 +49,7 @@ int is_valid(Node* n)
    int auxj = 0;
    while(auxi < 9 && auxj < 9) {
       if(n->sudo[auxi][auxj] == 0) {
-         printf("[%d][%d]\n", auxi, auxj);
+         //printf("[%d][%d]\n", auxi, auxj);
          auxj++;
          if(!(auxj % 9)) {
             auxj = 0;
