@@ -51,22 +51,25 @@ int is_valid(Node* n)
         printf("[%d][%d]\n", auxi, auxj);
         for(int i = 0; i < 9; i++) {
             if(i != auxi && n->sudo[i][auxj] == n->sudo[auxi][auxj]) {
-                printf("Iguales en fila: %d -> (%d, %d)\n", n->sudo[auxi][auxj], i, auxj);
+                //printf("Iguales en fila: %d -> (%d, %d)\n", n->sudo[auxi][auxj], i, auxj);
+               return 0;
             }
         }
         for(int j = 0; j < 9; j++) {
             if(j != auxj && n->sudo[auxi][j] == n->sudo[auxi][auxj]) {
-                printf("Iguales en columna: %d -> (%d, %d)\n", n->sudo[auxi][auxj], auxi, j);
+                //printf("Iguales en columna: %d -> (%d, %d)\n", n->sudo[auxi][auxj], auxi, j);
+               return 0;
             }
         }
         for(int i = (auxi / 3) * 3; i < ((auxi / 3) * 3) + 3; i++) {
             for(int j = (auxj / 3) * 3; j < ((auxj / 3) * 3) + 3; j++) {
                 if((i != auxi || j != auxj) && n->sudo[i][j] == n->sudo[auxi][auxj]) {
-                    printf("Iguales en submatriz: %d -> (%d, %d)\n", n->sudo[auxi][auxj], i, j);
+                   return 0;
+                    //printf("Iguales en submatriz: %d -> (%d, %d)\n", n->sudo[auxi][auxj], i, j);
                 }
             }
         }
-        printf("\n");
+        //printf("\n");
         auxj++;
         if(!(auxj % 9)) {
             auxj = 0;
