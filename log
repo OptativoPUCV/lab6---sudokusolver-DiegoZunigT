@@ -125,3 +125,19 @@ Thu 16 May 2024 07:45:38 PM UTC:
  tests:  5|3
 total_score: 35/70
 29edf7a
+Thu 16 May 2024 07:49:14 PM UTC: 
+ sudoku.c | 9 +++------
+ 1 file changed, 3 insertions(+), 6 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:71:83: error: statement with no effect [-Werror=unused-value]
+   71 |             if((i != auxi || j != auxj) && n->sudo[i][j] == n->sudo[auxi][auxj]) {j);
+      |                                                                                   ^
+sudoku.c:71:84: error: expected ‘;’ before ‘)’ token
+   71 |             if((i != auxi || j != auxj) && n->sudo[i][j] == n->sudo[auxi][auxj]) {j);
+      |                                                                                    ^
+      |                                                                                    ;
+sudoku.c:71:84: error: expected statement before ‘)’ token
+cc1: all warnings being treated as errors
+Compilation failed
+ccbc923

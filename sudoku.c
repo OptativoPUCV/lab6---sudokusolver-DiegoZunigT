@@ -49,7 +49,6 @@ int is_valid(Node* n)
    int auxj = 0;
    while(auxi < 9 && auxj < 9) {
       if(n->sudo[auxi][auxj] == 0) {
-         //printf("[%d][%d]\n", auxi, auxj);
          auxj++;
          if(!(auxj % 9)) {
             auxj = 0;
@@ -59,25 +58,21 @@ int is_valid(Node* n)
       }
       for(int i = 0; i < 9; i++) {
          if(i != auxi && n->sudo[i][auxj] == n->sudo[auxi][auxj]) {
-            //printf("Iguales en fila: %d -> (%d, %d)\n", n->sudo[auxi][auxj], i, auxj);
             return 0;
          }
       }
       for(int j = 0; j < 9; j++) {
          if(j != auxj && n->sudo[auxi][j] == n->sudo[auxi][auxj]) {
-            //printf("Iguales en columna: %d -> (%d, %d)\n", n->sudo[auxi][auxj], auxi, j);
             return 0;
          }
       }
       for(int i = (auxi / 3) * 3; i < ((auxi / 3) * 3) + 3; i++) {
          for(int j = (auxj / 3) * 3; j < ((auxj / 3) * 3) + 3; j++) {
-            if((i != auxi || j != auxj) && n->sudo[i][j] == n->sudo[auxi][auxj]) {
-               //printf("Iguales en submatriz: %d -> (%d, %d)\n", n->sudo[auxi][auxj], i, j);
+            if((i != auxi || j != auxj) && n->sudo[i][j] == n->sudo[auxi][auxj]) {j);
                return 0;
             }
          }
       }
-      //printf("\n");
       auxj++;
       if(!(auxj % 9)) {
          auxj = 0;
@@ -97,7 +92,9 @@ List* get_adj_nodes(Node* n)
             for(int aux = 1; aux < 10; aux++) {
                Node *newNode = copy(n);
                newNode->sudo[i][j] = aux;
-               pushBack(list, newNode);
+               if(is_valid(newNode) == 1) {
+                  pushBack(list, newNode);
+               }
             }
          }
       }
